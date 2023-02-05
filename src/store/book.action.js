@@ -10,7 +10,7 @@ export async function loadBooks() {
             type: SET_BOOKS,
             books
         })
-
+        return books
     } catch (err) {
         throw err
     }
@@ -20,7 +20,7 @@ export async function loadBooks() {
 export async function updateBook(book) {
     try {
         const savedBook = await bookService.save(book)
-        store.dispatch({type: UPDATE_BOOK, savedBook})
+        store.dispatch({ type: UPDATE_BOOK, book })
         return savedBook
     } catch (err) { console.log(err); throw err }
 }
