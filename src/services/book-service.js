@@ -131,15 +131,17 @@ function _createBooks() {
 
 async function query(sortBy) {
     try {
+        console.log(sortBy.type)
         let books = await storageService.query(BOOKS_KEY)
-        if (sortBy.price === 'price') {
-            books = books.sort((b1, b2) => (b2.price - b1.price))
+        let sortBooks = books
+        if (sortBy.type === 'price') {
+            sortBooks = sortBooks.sort((b1, b2) => (b2.price - b1.price))
         }
-        if (sortBy.price === 'title') {
-            books = books.sort((b1, b2) => (b2.title.length - b1.title.length))
+        if (sortBy.type === 'title') {
+            sortBooks = sortBooks.sort((b1, b2) => (b2.title.length - b1.title.length))
         }
-        if (sortBy.price === 'rating') {
-            books = books.sort((b1, b2) => (b1.rating - b2.rating))
+        if (sortBy.type === 'rating') {
+            sortBooks = sortBooks.sort((b1, b2) => (b2.rating - b1.rating))
         }
         return books
     } catch (err) {

@@ -8,7 +8,7 @@ export function BookSort() {
     const [editsortBy, editsetSortBy] = useState(bookService.getEmptySort())
 
     const handleClick = type => {
-        editsetSortBy((pervSort) => ({ ...pervSort, [type]: type }))
+        editsetSortBy({ type: type })
         onSetSort(editsortBy)
     }
 
