@@ -3,7 +3,7 @@ import { BookList } from '../cmps/book-list.jsx';
 
 
 export function BookStatus(){
-    return <section className="book-preview">
+    return <section className="book-status">
         <BookSort/>
         <BookList/>
     </section>

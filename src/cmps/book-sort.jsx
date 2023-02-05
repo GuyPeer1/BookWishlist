@@ -1,6 +1,8 @@
 
 export function BookSort(){
     return <section className="book-sort">
-        TITLE PRICE RATING
+        <span className="title">Title</span>
+        <span className="price">Price</span>
+        <span className="rating">Rating</span>
     </section>
 }

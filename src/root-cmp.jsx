@@ -8,12 +8,10 @@ export function RootCmp(){
     return (
         <section className="app main-layout">
             <AppHeader />
-            <main className='main-app' >
                 <Routes>
                     <Route element={<BookWishIndex />} path="/">
                     </Route>
                 </Routes>
-            </main>
         </section >
     )
 }
