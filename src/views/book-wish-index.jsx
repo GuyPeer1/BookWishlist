@@ -13,7 +13,7 @@ export function BookWishIndex() {
     console.log(books)
     return (
         <section className="book-wish-index">
-            <BookPreview />
+            <BookPreview books={books} />
             <BookStatus />
         </section>
     )
