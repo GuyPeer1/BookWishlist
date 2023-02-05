@@ -8,7 +8,7 @@ export function BookPreview({ currBook }) {
         console.log('hi')
     }, [currBook])
 
- 
+ console.log(currBook)
 
     return <article className="book-preview">
         <div className="preview-head flex space-between">
@@ -23,7 +23,7 @@ export function BookPreview({ currBook }) {
             </p>
         </div>
         <div className="rating flex">
-            <p>Rating: {currBook.rating}</p>
+        {Array.from({length: currBook.rating}, (_, i) => <span key={i}>⭐</span>)}
         </div>
         <div className="price flex">
             <p>{`Price: $${currBook.price}`}</p>
