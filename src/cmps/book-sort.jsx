@@ -1,10 +1,15 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { bookService } from "../services/book-service"
+import { onSetSort } from "../store/book.action"
 
 export function BookSort() {
-    const [sortBy, setSortBy] = useState(null)
+    const sortBy = useSelector(storeState => storeState.bookModule.sortBy)
+    const [editsortBy, editsetSortBy] = useState(bookService.getEmptySort())
 
     const handleClick = type => {
-        setSortBy(type)
+        editsetSortBy((pervSort) => ({ ...pervSort, [type]: type }))
+        onSetSort(editsortBy)
     }
 
     return (

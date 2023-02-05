@@ -1,5 +1,5 @@
 import { bookService } from '../services/book-service';
-import { SET_BOOKS, REMOVE_BOOK, ADD_BOOK, UPDATE_BOOK } from './book.reducer.js';
+import { SET_BOOKS, REMOVE_BOOK, ADD_BOOK, UPDATE_BOOK, SET_SORT } from './book.reducer.js';
 import { store } from './store.js';
 
 
@@ -25,3 +25,6 @@ export async function updateBook(book) {
     } catch (err) { console.log(err); throw err }
 }
 
+export function onSetSort(sortBy) {
+    return store.dispatch({ type: SET_SORT, sortBy })
+}

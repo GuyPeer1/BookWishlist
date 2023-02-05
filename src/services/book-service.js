@@ -139,7 +139,7 @@ async function query(sortBy) {
             books = books.sort((b1, b2) => (b2.title.length - b1.title.length))
         }
         if (sortBy.price === 'rating') {
-            books = books.sort((b1, b2) => (b2.rating - b1.rating))
+            books = books.sort((b1, b2) => (b1.rating - b2.rating))
         }
         return books
     } catch (err) {
