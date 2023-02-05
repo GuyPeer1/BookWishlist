@@ -16,7 +16,7 @@ export function BookWishIndex() {
     return (
         <section className="book-wish-index">
             <BookPreview books={books} />
-            <BookStatus />
+            <BookStatus books={books} />
         </section>
     )
 }
