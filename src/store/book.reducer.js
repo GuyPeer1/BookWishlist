@@ -4,6 +4,7 @@ export const SET_BOOKS = 'SET_STAYS'
 export const REMOVE_BOOK = 'REMOVE_STAY'
 export const ADD_BOOK = 'ADD_STAY'
 export const UPDATE_BOOK = 'UPDATE_BOOK'
+export const SET_SORT = 'SET_SORT'
 
 const initialState = {
     books: [],
@@ -27,6 +28,8 @@ export function bookReducer(state = initialState, action) {
         case UPDATE_BOOK:
             books = state.books.map(book => book._id === action.book._id ? action.book : book)
             return { ...state, books }
+        case SET_SORT:
+            return { ...state, sortBy: action.sortBy }
         default:
     }
     return newState

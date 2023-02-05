@@ -12,7 +12,8 @@ export function BookWishIndex() {
 
     useEffect(() => {
         onLoadBooks(sortBy)
-    }, [])
+        console.log('hi')
+    }, [sortBy])
 
     async function onLoadBooks() {
         try {
