@@ -3,9 +3,9 @@ import BookListPreview from "./book-list-preview.jsx"
 
 export function BookList({ books }) {
 
+    const sum = bookService.sumCost(books.filter(book => book.inWishList === true))
+    
     if (!books) return 'Loading....'
-    const sum = bookService.sumCost(books)
-
     return <section className="book-list">
         {books.map((book, index) => {
             if (book.inWishList) return <BookListPreview key={index} book={book} />
