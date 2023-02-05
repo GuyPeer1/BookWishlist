@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { updateBook } from "../store/book.action"
+import { bookService } from "../services/book-service"
 
 export function BookPreview({ currBook }) {
 
@@ -8,15 +8,12 @@ export function BookPreview({ currBook }) {
         console.log('hi')
     }, [currBook])
 
-    async function onToggleWishList() {
-        currBook.inWishList = !currBook.inWishList
-        await updateBook(currBook)
-    }
+ 
 
     return <article className="book-preview">
         <div className="preview-head flex space-between">
             <h2>{currBook.title}</h2>
-            <input type="checkbox" checked={currBook.inWishList} onChange={onToggleWishList} />
+            <input type="checkbox" checked={currBook.inWishList} onChange={() => bookService.onToggleWishList(currBook)} />
         </div>
         <hr className="my-hr" />
         <h2 className="author">{currBook.author}</h2>

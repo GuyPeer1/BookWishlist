@@ -3,9 +3,9 @@ import { SET_BOOKS, REMOVE_BOOK, ADD_BOOK, UPDATE_BOOK } from './book.reducer.js
 import { store } from './store.js';
 
 
-export async function loadBooks() {
+export async function loadBooks(sortBy) {
     try {
-        const books = await bookService.query()
+        const books = await bookService.query(sortBy)
         store.dispatch({
             type: SET_BOOKS,
             books

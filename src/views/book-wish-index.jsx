@@ -7,15 +7,16 @@ import { loadBooks } from '../store/book.action.js';
 
 export function BookWishIndex() {
     const books = useSelector(storeState => storeState.bookModule.books)
+    const sortBy = useSelector(storeState => storeState.bookModule.sortBy)
     const [currBook, setCurrBook] = useState(null)
 
     useEffect(() => {
-        onLoadBooks()
+        onLoadBooks(sortBy)
     }, [])
 
     async function onLoadBooks() {
         try {
-            const booksToSave = await loadBooks()
+            const booksToSave = await loadBooks(sortBy)
             setCurrBook(booksToSave[0])
         } catch (err) {
             console.log(err)

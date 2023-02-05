@@ -1,3 +1,4 @@
+import { bookService } from "../services/book-service"
 
 export const SET_BOOKS = 'SET_STAYS'
 export const REMOVE_BOOK = 'REMOVE_STAY'
@@ -6,6 +7,7 @@ export const UPDATE_BOOK = 'UPDATE_BOOK'
 
 const initialState = {
     books: [],
+    sortBy: bookService.getEmptySort()
 }
 
 export function bookReducer(state = initialState, action) {
