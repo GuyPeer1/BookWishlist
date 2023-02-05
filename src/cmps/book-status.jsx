@@ -2,9 +2,10 @@ import { BookSort } from '../cmps/book-sort.jsx';
 import { BookList } from '../cmps/book-list.jsx';
 
 
-export function BookStatus(){
+export function BookStatus({books}){
+
     return <section className="book-status">
         <BookSort/>
-        <BookList/>
+        <BookList books={books}/>
     </section>
 }
