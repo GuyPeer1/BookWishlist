@@ -6,8 +6,7 @@ const BOOKS_KEY = 'BOOKS_KEY'
 export const bookService = {
     query,
     getById,
-    removeFromWishList,
-    addToWishList
+    save
 }
 
 _createBooks()
@@ -129,3 +128,22 @@ async function getById(bookId) {
     }
 }
 
+async function save(book) {
+    if (book._id) {
+        try {
+            const bookToSave = await storageService.put(BOOKS_KEY, book)
+            return bookToSave
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    } else {
+        try {
+            const bookToSave = await storageService.post(BOOKS_KEY, book)
+            return bookToSave
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    }
+}
