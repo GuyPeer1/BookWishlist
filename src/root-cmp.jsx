@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router';
-import routes from './routes';
 
 import { AppHeader } from './cmps/app-header.jsx';
+import { BookWishIndex } from './views/book-wish-index';
 
 
 export function RootCmp(){
@@ -10,12 +10,10 @@ export function RootCmp(){
             <AppHeader />
             <main className='main-app' >
                 <Routes>
-                    {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
-                    <Route element={<AppHeader />} path="/app">
+                    <Route element={<BookWishIndex />} path="/">
                     </Route>
                 </Routes>
             </main>
-            {/* <AppFooter /> */}
         </section >
     )
 }

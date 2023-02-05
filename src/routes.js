@@ -1,11 +1,12 @@
 // import { StayIndex } from './pages/stay-index.jsx'
 
+import { BookWishIndex } from "./views/book-wish-index"
+
 const routes = [
-    // {
-    //     path: '',
-    //     component: <StayIndex />,
-    //     label: 'stays'
-    // },
+    {
+        path: '',
+        component: <BookWishIndex />,
+    },
 ]
 
 export default routes

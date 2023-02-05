@@ -1,10 +1,10 @@
 import { combineReducers, createStore } from 'redux';
 
-import { stayReducer } from './stay.reducer.js';
+import { bookReducer } from './book.reducer.js';
 import { userReducer } from './user.reducer.js';
 
 const rootReducer = combineReducers({
-    stayModule: stayReducer,
+    bookModule: bookReducer,
     userModule: userReducer,
 })
 
