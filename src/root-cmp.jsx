@@ -6,7 +6,7 @@ import { BookWishIndex } from './views/book-wish-index';
 
 export function RootCmp(){
     return (
-        <section >
+        <section className="app main-layout">
             <AppHeader />
             <main className='main-app' >
                 <Routes>
