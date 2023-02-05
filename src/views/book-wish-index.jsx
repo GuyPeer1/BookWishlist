@@ -1,7 +1,12 @@
+import { BookPreview } from '../cmps/book-preview.jsx';
+import { BookStatus } from '../cmps/book-status.jsx';
+
+
 export function BookWishIndex() {
     return (
         <section className="book-wish-index">
-            <h2>hi</h2>
+            <BookPreview/>
+            <BookStatus/>
         </section>
     )
 }
