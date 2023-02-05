@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function BookPreview({ books }) {
 
     const [currBook, setCurrBook] = useState(books[0])
+
 
     return <article className="book-preview">
         <div className="preview-head flex space-between">

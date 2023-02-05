@@ -7,10 +7,12 @@ import { loadBooks } from '../store/book.action.js';
 
 export function BookWishIndex() {
     const books = useSelector(storeState => storeState.bookModule.books)
+
     useEffect(() => {
         loadBooks()
     }, [])
-    console.log(books)
+
+    if (!books.length) return <h2>loading....</h2>
     return (
         <section className="book-wish-index">
             <BookPreview books={books} />
