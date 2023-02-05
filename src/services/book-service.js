@@ -6,8 +6,8 @@ const BOOKS_KEY = 'BOOKS_KEY'
 export const bookService = {
     query,
     getById,
-    remove,
-    save,
+    removeFromWishList,
+    addToWishList
 }
 
 _createBooks()
@@ -15,7 +15,7 @@ _createBooks()
 function _createBooks() {
     let books = storageService.loadFromStorage(BOOKS_KEY)
     if (!books) {
-        books =  [
+        books = [
             {
                 "title": "Sea of Death",
                 "description": "Written in 1936 when Amado was twenty-four years old, Sea of Death tells the dockside tales of Bahia. Sailors and their wives, steeped in the rich mythology surrounding the goddess Iemanj?, are at the heart of this novel, a lyrical and tragic portrayal of the workers� daily struggle for survival. Sea of Death narrates the story of Guma and L?via, lovers whose triumphs and tribulations mirror the dark imperatives of the world around them.",
@@ -98,3 +98,40 @@ function _createBooks() {
         storageService.saveToStorage(BOOKS_KEY, books)
     }
 }
+
+async function query() {
+    try {
+        const books = await storageService.query(BOOKS_KEY)
+        return books
+    } catch (err) {
+        console.log(err)
+        throw err
+    }
+}
+async function getById(bookId) {
+    try {
+        const book = await storageService.getById(bookId)
+        return book
+    } catch (err) {
+        console.log(err)
+        throw err
+    }
+}
+// async function removeFromWishList(bookId) {
+//     try {
+       
+//     } catch (err) {
+//         console.log(err)
+//         throw err
+//     }
+// }
+// async function addToWishList() {
+//     try {
+
+//     } catch (err) {
+//         console.log(err)
+//         throw err
+//     }
+// }
+
+
