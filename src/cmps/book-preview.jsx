@@ -8,7 +8,7 @@ export function BookPreview({ books }) {
     return <article className="book-preview">
         <div className="preview-head flex space-between">
             <h2>{currBook.title}</h2>
-            <input type="checkbox" />
+            <input type="checkbox" checked={currBook.inWishList}/>
         </div>
         <hr className="my-hr" />
         <h2 className="author">{currBook.author}</h2>
