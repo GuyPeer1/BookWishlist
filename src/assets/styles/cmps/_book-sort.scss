@@ -1,6 +1,13 @@
 .book-sort{
+    
     span{
+        color: rgb(21, 109, 97);
         padding: em(16px);
         background-color: white;
+        }
     }
-}
+
+    .book-sort span.picked {
+        background-color: rgb(21, 109, 97);
+        color: white;
+      }
