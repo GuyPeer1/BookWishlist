@@ -1,0 +1,32 @@
+.book-preview {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 1px 1px 1px gray;
+    padding: em(16px);
+    max-width: em(280px);
+
+
+    hr {
+        width: 100%;
+        color: gray;
+    }
+
+    .author {
+        color: rgb(142 178 175);
+        padding-bottom: em(7px);
+    }
+
+    p {
+        font-size: em(18px);
+    }
+
+    .book-desc {
+        max-height: em(280px);
+        overflow-y: scroll;
+    }
+    .rating {
+        padding-top: em(7px);
+    }
+
+}

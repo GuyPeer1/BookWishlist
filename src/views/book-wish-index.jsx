@@ -12,9 +12,10 @@ export function BookWishIndex() {
         loadBooks()
     }, [])
 
+    if (!books.length) return <h2>loading....</h2>
     return (
         <section className="book-wish-index">
-            <BookPreview />
+            <BookPreview books={books} />
             <BookStatus books={books} />
         </section>
     )
