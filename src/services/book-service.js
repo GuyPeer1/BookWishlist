@@ -6,7 +6,12 @@ const BOOKS_KEY = 'BOOKS_KEY'
 export const bookService = {
     query,
     getById,
-    save
+    save,
+    sumCost
+}
+
+function sumCost(books) {
+    return books.reduce((total, book) => total + book.price, 0)
 }
 
 _createBooks()
